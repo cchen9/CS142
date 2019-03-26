@@ -1,0 +1,13 @@
+<div id="detailsheet">
+  current_uid: {{current_uid}} <br>
+  user._id: {{user._id}} <br>
+  <p><md-button ng-if="current_uid === user._id" ng-click="removeUser(user._id)" class="md-raised md-primary"> Delete Your Account! </md-button><p>
+  <p> <b> My first name is: </b> {{user.first_name}} </p>
+  <p> <b> My last name is: </b> {{user.last_name}} </p>
+  <p> <b> My occupation is: </b> {{user.occupation}} </p>
+  <p> <b> My location is: </b> {{user.location}} </p>
+  <p> <b> My description is: </b> {{user.description}} </p>
+  <p ng-show="mostrecent_show"> {{mostrecentphoto.file_name}} is most recent photo, uploaded at {{mostrecentphoto.date_time | date : "MMM d, y h:mm:ss a"}}!<a ng-href="#!photos/{{user._id}}#{{mostrecentphoto._id}}"><img ng-src="images/{{mostrecentphoto.file_name}}" alt="Forest" style="width:10%;height:10%;"></a></p>
+  <p ng-show="mostpopular_show"> {{mostpopularphoto.file_name}} has the most comments. <br>Number of comments: {{mostpopularphoto.comments.length}} <a ng-href="#!photos/{{user._id}}#{{mostpopularphoto._id}}"><img ng-src="images/{{mostpopularphoto.file_name}}" alt="Forest" style="width:10%;height:10%;"></a></p>
+  <p> <md-button class="md-raised"> <a ng-href="#!photos/{{user._id}}"> Photos! </a> </md-button> </p>
+</div>

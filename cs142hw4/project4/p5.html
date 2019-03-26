@@ -1,0 +1,41 @@
+<!doctype html>
+<!--Defined everything in side the html tag to be an angular view template with the
+controller named MainController.-->
+<html ng-app="cs142App" ng-controller="MainController">
+
+        <!-- Add Angular -->
+        <!--<script src="node_modules/angular-route/angular-route.min.js"></script> -->
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+        <!--Include the main controller (MainController) and stylesheet -->
+        <script src="mainController.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <!--Include the controllers and models for all the view templates we are using.  Currently
+        that is only the example component.-->
+        <script src="components/example/exampleController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/example/example.css" />
+        <script src="modelData/example.js"></script>
+
+        <script src="components/header/headerController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/header/header.css" />
+
+        <script src="components/states/statesController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/states/states.css" />
+        <script src="modelData/states.js"></script>
+    <body>
+        <div class="p5toolbar">
+          <table align="center">
+            <tr>
+              <th>Click for States View!</th>
+              <th>Click for Example View!</th>
+            </tr>
+            <tr>
+              <td><a href="#!states">States View</a></td>
+              <td><a href="#!example">Example View</a></td>
+            </tr>
+          </table>
+        </div>
+        <div ng-include="'components/header/headerTemplate.html'" ng-controller="headerController"></div>
+        <div ng-view></div>
+    </body>
+</html>

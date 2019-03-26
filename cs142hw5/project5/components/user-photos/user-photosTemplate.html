@@ -1,0 +1,9 @@
+<div id="sheet">
+  <div ng-repeat="pho in userPhotos">
+    <div><img ng-src="images/{{pho.file_name}}"></div>
+    <div id="added"> The photo above was added at {{pho.date_time}}</div>
+    <div ng-repeat="comm in pho.comments">
+      <div class="space"><div class="commentdescription"> At {{comm.date_time}}, <md-button class="md-raised"><a ng-href="#!users/{{comm.user._id}}">{{comm.user.first_name}} {{comm.user.last_name}} </a> </md-button>commented "{{comm.comment}}"</div></div>
+    </div>
+  </div>
+</div>

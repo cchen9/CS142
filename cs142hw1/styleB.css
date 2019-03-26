@@ -1,0 +1,63 @@
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 10px;
+}
+
+.containerB {
+	display: flex;
+	flex-direction: row;
+	bottom: 0;
+	right: 0;
+	position:fixed;
+}
+
+.containerA {
+	display: inline-flex;
+	flex-direction: row;
+	position: absolute;
+}
+#A, #B, #C, #D, #E {
+	display: inline-block;
+	width: 100px;
+	height: 150px;
+	border-left: 10px dotted #D0D0FF;
+	padding-top: 10px;
+	padding-left: 10px;
+	text-align: left;
+	background-color: #eeeff2;
+	font-family: Tahoma;
+	font-size: 40px;
+	white-space: nowrap;
+}
+
+#A:hover, #B:hover, #C:hover, #D:hover, #E:hover, #F:hover {
+	display: inline-block;
+	background-color: yellow;
+	cursor: pointer;
+	color: goldenrod;
+	white-space: nowrap;
+}
+
+.gap {
+	width: 10px;
+	white-space: nowrap;
+}
+
+#F {
+	display: inline-block;
+	width: 100px;
+	height: 150px;
+	border-left: 10px dotted #D0D0FF;
+	padding-top: 10px;
+	padding-left: 10px;
+	text-align: left;
+	background-color: #eeeff2;
+	font-family: Tahoma;
+	font-size: 40px;
+	white-space: nowrap;
+}

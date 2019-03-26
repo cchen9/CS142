@@ -1,0 +1,83 @@
+'use strict';
+
+var cs142App = angular.module('cs142App', ['ngRoute', 'ngMaterial', 'ngResource']);
+
+cs142App.config(['$routeProvider',
+    function ($routeProvider) {
+        $routeProvider.
+            when('/login-register', {
+              templateUrl: 'components/login-register/login-registerTemplate.html',
+              controller: 'login-registerController'
+            }).
+            when('/users', {
+                templateUrl: 'components/user-list/user-listTemplate.html',
+                controller: 'UserListController'
+            }).
+            when('/users/:userId', {
+                templateUrl: 'components/user-detail/user-detailTemplate.html',
+                controller: 'UserDetailController'
+            }).
+            when('/photos/:userId', {
+                templateUrl: 'components/user-photos/user-photosTemplate.html',
+                controller: 'UserPhotosController'
+            }).
+            otherwise({
+                redirectTo: '/users'
+            });
+    }]);
+
+cs142App.controller('MainController', ['$scope', '$resource', '$rootScope', '$location',
+    function ($scope, $resource, $rootScope, $location) {
+        $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+          /*
+          if ($rootScope.current_user) {
+            $rootScope.noOneIsLoggedIn = false;
+          }
+          else {
+            $rootScope.noOneIsLoggedIn = true;
+            $rootScope.loginMessage = "Please login!"
+          }
+          if ($rootScope.noOneIsLoggedIn) {
+            // no logged user, redirect to /login-register unless already there
+            if (next.templateUrl !== "components/login-register/login-registerTemplate.html") {
+              $location.path("/login-register");
+            }
+          }
+          */
+          if ($rootScope.current_user) {
+          }
+          else {
+            // no logged user, redirect to /login-register unless already there
+            if (next.templateUrl !== "components/login-register/login-registerTemplate.html") {
+              $location.path("/login-register");
+            }
+          }
+        });
+
+
+        $rootScope.$watch('current_user', function(newValue, oldValue, scope) {
+          if ((oldValue === null || oldValue === undefined || oldValue === '') && newValue) {
+            scope.$broadcast('log-in occurred');
+            scope.loginMessage = "Hi " + $rootScope.current_user.first_name;
+          }
+          if (oldValue && (newValue === undefined || newValue === null || newValue === '')) {
+            scope.$broadcast('log-out occurred');
+            console.log("a log-out occurred right now;")
+            $rootScope.noOneIsLoggedIn = true;
+            scope.loginMessage = "Please login!";
+            $location.path("/login-register");
+          }
+        });
+
+        $scope.main = {};
+        $scope.main.title = 'Users';
+        $scope.main.right_toolbar = '';
+        $scope.LogoutButton = function() {
+          $rootScope.current_user = null;
+        };
+        var Version = $resource("/test/info");
+        var data = Version.get({}, function(data){
+            $scope.vInfo = 'My current version is ' + data.version + '.';
+        });
+
+}]);

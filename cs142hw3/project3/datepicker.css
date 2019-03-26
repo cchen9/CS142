@@ -1,0 +1,10 @@
+
+#dimmed_block{
+  background: green;
+}
+
+table{
+    border: 10px solid green;
+    text-align: center;
+    background: lightgreen;
+}

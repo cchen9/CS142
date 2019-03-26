@@ -1,0 +1,28 @@
+<form name="login-register-form">
+
+  <p>
+  <b> If you have already registered, please login below.</b><br><br>
+  User login name: <input type="text" ng-model="textInput"><br>
+  User password: <input type="password" ng-model="passwordInput"><br>
+  {{loginFailureMessage}}<br>
+  <md-button ng-click="buttonClick()" class="md-raised md-primary">Log In!</md-button><br>
+  </p>
+
+  <p>
+  <b>If you are a new user, please click here to open registration section.</b><br>
+  <md-button ng-click="openRegistrationButton()" class="md-raised md-primary">Open Registration Section!</md-button><br>
+  <p ng-show="openRegistration">
+  User login name (Required Field): <input type="text" ng-model="textInputRegister"><br>
+  User password (Required Field): <input type="password" ng-model="passwordInputRegister"><br>
+  Retype user password (Required Field): <input type="password" ng-model="password2InputRegister"><br>
+  first_name (Required Field): <input type="text" ng-model="firstnameInputRegister"><br>
+  last_name (Required Field): <input type="text" ng-model="lastnameInputRegister"><br>
+  location (optional): <input type="text" ng-model="locationInputRegister"><br>
+  description (optional): <input type="text" ng-model="descriptionInputRegister"><br>
+  occupation (optional): <input type="text" ng-model="occupationInputRegister"><br>
+  {{registerFailureMessage}} <br>
+  <md-button ng-show="openRegistration" ng-click="registerbuttonClick()" class="md-raised md-primary"> Register Me!</md-button><br>
+  </p>
+  <!--<p><md-button ng-show="no_existing_user" ng-click="registerbuttonClick()" class="md-raised md-primary"> Register Me!</md-button><br></p> -->
+  </p>
+</form>

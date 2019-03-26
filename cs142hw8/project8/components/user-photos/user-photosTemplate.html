@@ -1,0 +1,19 @@
+<div id="sheet">
+  <div ng-repeat="pho in userPhotos">
+    <div ng-attr-id="{{pho._id}}"><img ng-src="images/{{pho.file_name}}"></div>
+    <div class="removebutton" ng-if="canRemovePhoto(pho.user_id)"> <md-button ng-click="removePhoto(pho._id)" class="md-raised">Remove Photo!</md-button></div>
+    <div class="added"> The photo above was added at {{pho.date_time | date : "MMM d, y h:mm:ss a"}}
+      <form ng-submit="LikePhoto(pho._id)" >
+        <span> There are currently {{pho.likes.length}} likes for this photo, by these users: <br> {{pho.likes}}</span><br>
+        <input class="likebutton" ng-if="pho.likes.indexOf(current_uid) < 0" type="submit" value="Like It!">
+        <input class="likebutton" ng-if="pho.likes.indexOf(current_uid) >= 0" type="submit" value="UnLike It!">
+      </form>
+    </div>
+    <div class="added">Comment box: <input type="text" ng-model="comment"><br>
+    <md-button ng-click="addComment2Box(pho._id, comment)" class="md-raised">Add a comment to this photo!</md-button></div>
+    <div ng-repeat="comm in pho.comments | orderBy:'date_time'">
+        <div class="commentdescription"> At {{comm.date_time | date : "MMM d, y h:mm:ss a"}}, <md-button class="md-raised"><a ng-href="#!users/{{comm.user._id}}">{{comm.user.first_name}} {{comm.user.last_name}} </a> </md-button>commented "{{comm.comment}}"
+        <span ng-if="canRemoveComment(comm.user._id)"> <md-button ng-click="removeComment(comm, pho._id)" class="md-raised">Remove Comment!</md-button></span></div>
+    </div>
+  </div>
+</div>

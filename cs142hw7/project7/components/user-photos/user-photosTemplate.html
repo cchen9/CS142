@@ -1,0 +1,11 @@
+<div id="sheet">
+  <div ng-repeat="pho in userPhotos | orderBy: 'date_time'">
+    <div><img ng-src="images/{{pho.file_name}}"></div>
+    <div id="added"> The photo above was added at {{pho.date_time | date : "MMM d, y h:mm:ss a"}}</div>
+    <p>Comment box: <input type="text" ng-model="comment"><br>
+    <md-button ng-click="addComment2Box(pho._id, comment)" class="md-raised">Add a comment to this photo!</md-button></p>
+    <div ng-repeat="comm in pho.comments | orderBy:'date_time'">
+      <div class="space"><div class="commentdescription"> At {{comm.date_time | date : "MMM d, y h:mm:ss a"}}, <md-button class="md-raised"><a ng-href="#!users/{{comm.user._id}}">{{comm.user.first_name}} {{comm.user.last_name}} </a> </md-button>commented "{{comm.comment}}"</div></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+
+img {
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+  display: block;
+  width: 50%
+
+}
+
+p {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font: 20px arial, sans-serif;
+  color: gray;
+}
+
+#sheet {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.removebutton{
+  text-align: center;
+  font: 20px arial;
+  color: gray;
+}
+.likebutton{
+  text-align: center;
+  font: 20px arial;
+  color: gray;
+}
+.added {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  text-align: center;
+  font: 20px arial;
+  color: gray;
+}
+
+.commentdescription{
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  font: 20px arial;
+  color: gray;
+}
+
+.space{
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}

@@ -1,0 +1,11 @@
+<!--Replaced this with the Angular template for states component of CS142 Project #4
+    Problem #2.-->
+<script src="components/header/headerController.js"></script>
+<link rel="stylesheet" type="text/css" href="components/header/header.css" />
+<div>
+    <h1>CS142 States View</h1>
+    <p class="cs142-states-search">Enter a substring to search for: <input type="text" required ng-Trim=False ng-model="textInput"></p>
+    <button ng-click="statesButtonFilter(textInput)">Search it!</button>
+    <p class="cs142-states-search"> We searched for states with the following substring: "{{textInput}}". </p>
+    <p class="cs142-states-output"> Here is the list of states that were found or not found: {{filtered}} </p>
+</div>

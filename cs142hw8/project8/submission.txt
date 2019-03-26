@@ -1,0 +1,92 @@
+Project #8 - Submission form
+
+Name: Clare Chen
+
+Please fill in this form and submit it with your project #8.
+
+Enter no more than 5 user stories that you did for the assignment that you would like to be
+graded on. For each story include the following information:
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Story number and name: 1 - Extend user profile detail with usage
+Story points: 3
+Brief description to see the story in action:
+
+Upon login, the view will be redirected to the user details page of the logged in user. There will be a button labeled "DELETE YOUR ACCOUNT!" at the top of the user details page. When pressed, the user and his/her associated photos and likes will be deleted and no trace of the user will be left.  (Note that only the logged in user will have this "DELETE YOUR ACCOUNT" button appear on his/her user details page, since the logged-in user can only delete his/her own account and not some other user's account). Below this button, all the user's details are displayed (i.e. first name, last name, occupation, location, description).
+
+Below the description information on the user details page, is a thumbnail image of the most recently uploaded photo; above this photo is a message stating the photo's file_name and the date it was uploaded.  Below the most recently uploaded photo, is a thumbnail image of the photo of the user that has the most comments on it; above this photo with most comments is a message stating the photo's file_name and the number of comments it has.  Clicking on either of these thumbnail images will switch the view to the photo view containing the photo and all its comments.
+
+Note that if a newly registered user is logged in initially, he/she will not have any existing photos. Naturally since, there are no photos, the author of the app chose to not display anything under the description field on the user details page as there are no images associated with this user yet.  However upon photo upload, the appropriate thumbnails and respective descriptive messages will be populated immediately under the description field on the user details page.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Story number and name: 3 - Visibility control on photos
+Story points: 4
+Brief description to see the story in action:
+
+MAIN TOOLBAR LAYOUT:
+
+Upon login, the toolbar will be populated with new information.  The left side of the toolbar will contain the following text:
+
+Author of App: Clare Chen
+Version is 1.0.
+Hi (#FIRST NAME OF LOGGED IN USER#)!
+
+Below the last message will be a blue button labeled "LOG OUT".  This button will redirect the main view back to the login register page and depopulate the side-nav view and toolbar.
+
+UPLOADING NEW PHOTO AND STORY NUMBER 3:
+
+When a user uploads a photo, the user is given an option of specifying a list of users (a sharing list) that can see the photo.  If no list is specified (user declines option to specify a list) then the photo should be visible by everyone (Scenario A).  If a photo has sharing list associated with it, only the owner of the photo and those on the list can see it (Scenario B). Finally if the sharing list is empty, then only the owner of the photo can see the photo (Scenario C).  Note that this is different from "no list is specified."
+
+On the right side of the main toolbar there is an "ADD PHOTO" button, and next to it a "CHOOSE FILE" button. Below these buttons, is a message detailing what is displayed in the main view. To upload a file, the user selects a file with the "CHOOSE FILE" button first and then decides whether to check the "SPECIFY SHARING LIST" box and if the user has selected the "SPECIFY SHARING LIST" box, the user will decide which user or users should be allowed to see the photo.  There are alert boxes containing the instructions and reminders about how how to upload a photo that will pop up, please follow the instructions carefully.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Story number and name: 5 - Deleting Comments, Photos, and Users
+Story points: 4
+Brief description to see the story in action:
+
+DELETE PHOTO:
+From user details page, click on "PHOTOS" button to go to the photos view for that user.  Below each photo that was created by the user, there is a "REMOVE PHOTO" button that the user can click on to delete the photo and any "likes" and comments associated with that photo.
+
+DELETE COMMENT:
+To arrive at the photos view of any user, click on the appropriate button (labeled by user first name and last name) in the sidenav to get to the appropriate user detail page and from there click on the "PHOTOS" button to go the photos view for that particular user.  On any given photos view, the user can see any comment he/she has created appended with a button labeled "REMOVE COMMENT". Clicking on the "REMOVE COMMENT BUTTON" will delete that comment. The user does not have permission to delete any comment made by another user.
+
+DELETE USER:
+The logged in user can only delete his/her own user data and account.  To accomplish this, the user goes to his/her own user-detail page and clicks on the "DELETE YOUR ACCOUNT!" button at the top of the user-detail view.  Clicking this button will delete his/her account and the user will be logged out and all the remnants of his/her account and his activity (likes, comments, photo uploads) will be destroyed from the database.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Story number and name: 6 - Photo like votes
+Story points: 4
+Brief description to see the story in action:
+
+Below each photo on the user's photos view page is a message on when the photo was uploaded. Below this message is a statement on how many users have already liked the photo. The list of users (listed by user_id) who have already liked the photo is shown in the line underneath.  Finally under the list of users who have already liked the photo is a LIKE/UNLIKE button.  If the logged-in user has already liked the photo, this button will show "Unlike It!" and clicking on the "Unlike It!" button will remove the logged-in user from the list of users who have already liked the photo. On the other hand, if the logged-in user has not liked the photo, the button will show "Like It!" and clicking on the "Like It!" button will add the logged-in user's id to the list of users who have already liked the photo.
+
+Each user's photos page is sorted by the number of likes in descending order.  The photos with the most likes will be at the top.  If several photos have the same number of likes, these photos are sorted by the timestamp in reverse chronological order (with the most recent first).  The photos change positions immediately when a user likes/unlikes a photo.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Total Story Points: 3 + 4 + 4 + 4 = 15
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Marketing Video URL (ensure permissions are set to public viewing):
+https://vimeo.com/273945274
+
+Is it OK with you if we post your Marketing Video URL on the class discussion forum?
+Yes
+
+Any special instructions for Grading (should be easy to run app from new machine):
+
+SPECIAL INSTRUCTIONS FOR RUNNING EACH STORY ARE CONTAINED IN THE STORY DESCRIPTIONS ABOVE, PLEASE FOLLOW INSTRUCTIONS CAREFULLY WHEN RUNNING THE APP, BOTH HERE
+AND IN THE PROMPT BOXES THAT APPEAR WHEN RUNNING THE APP. SOME BASIC INSTRUCTIONS FOLLOW.
+
+                                                                      LOGGIN IN:
+
+The command "node webServer.js" starts the web server and connects to a MondoDB instance on the localhost at standard port address.  The URL http://localhost:3000/photo-share.html starts the app. The app will automatically redirect to the login-register page.
+
+On the main toolbar, the name of the author of the app is located on the left side, along with the message "Please login!".  There is a light gray vertical bar to the right of this text, do not be alarmed that is just an unfilled Angular select box that will be used to display the list of users in the visibility permissions feature.
+
+The sidenav is empty before login and the main view is on the login-register page. Below the message: "If you have already registered, please login below" are two input fields for "User login name:" and "User password:". To login directly, fill in the two fields as directed with a login-name and password pair of an already registered user, and click the button below labeled "LOG IN!".
+
+If login was successful, the main view will have been redirected to the user details page of the logged in user. After login, the sidenav view will then be filled in with the user list with buttons that will redirect the main view to the user-details view of the respective user when pressed.
+
+If login was not successful, the message, "No user with specified login_name and password could be found. Try to login again. If you are a new user, please register below." will be output.  If one or both of the required fields ("User login name:" and "User password:") is missing, the message "At least one of the required fields is missing" will be output.
+
+                                                                       REGISTRATION:
+
+The command "node webServer.js" starts the web server and connects to a MondoDB instance on the localhost at standard port address.  The URL http://localhost:3000/photo-share.html starts the app. The app will automatically redirect to the login-register page. To register, find the "OPEN REGISTRATION SECTION!" button and click it to reveal a new input form for registration.  Fill in all the fields that are labeled "(Required Field)" and click "REGISTER ME!" If registration was successful, a message, "User was successfully registered" will be shown and the filled in fields will be cleared.  To proceed with log in as the newly registered user, fill in the input fields ("User login name:" and "User password:") under the header "If you have already registered, please login below" with the login name and password pair you had earlier supplied to the registration input fields (note that both of these fields in the login section, login name and password, are required), and click "LOG IN!" If login is successful, the view should then be redirected to the user details page (with the information supplied during registration earlier); the sidenav is also filled with user list and toolbar filled in as well.
+
+

@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="cs142App" ng-controller="MainController">
+
+    <div ng-include="'components/header/headerTemplate.html'"></div>
+    
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="mainController.js"></script>
+
+    <script src="components/states/statesController.js"></script>
+    <link rel="stylesheet" type="text/css" href="components/states/states.css" />
+
+    <script src="modelData/states.js"></script>
+
+  <body>
+  <div ng-include="'components/states/statesTemplate.html'" ng-controller="StatesController"></div>
+  </body>
+</html>

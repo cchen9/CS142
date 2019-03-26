@@ -1,0 +1,9 @@
+.cs142-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 5px dotted purple;
+  background-color: lightblue;
+  display: block;
+}

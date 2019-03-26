@@ -1,0 +1,33 @@
+<!doctype html>
+<!--Defined everything in side the html tag to be an angular view template with the
+controller named MainController.-->
+<html ng-app="cs142App" ng-controller="MainController">
+        <!-- Add Angular -->
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+        <!--Include the main controller (MainController) and stylesheet -->
+        <script src="mainController.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <!--Include the controllers and models for all the view templates we are using.  Currently
+        that is only the example component.-->
+        <script src="components/example/exampleController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/example/example.css" />
+        <script src="modelData/example.js"></script>
+
+        <script src="components/header/headerController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/header/header.css" />
+
+        <script src="components/states/statesController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/states/states.css" />
+        <script src="modelData/states.js"></script>
+
+
+    <body>
+        <p>Click the button to change the view:</p>
+        <button ng-click="buttonClick()">Go to {{main.state.nextView}} view!</button>
+        <div ng-include="'components/header/headerTemplate.html'" ng-controller="headerController"></div>
+        <div ng-show="main.state.exampleview" class="myheader">Greetings! My name is {{main.name}} and my motto is {{main.motto}}</div>
+        <div ng-show="main.state.exampleview" ng-include="'components/example/exampleTemplate.html'" ng-controller="ExampleController"></div>
+        <div ng-show="main.state.statesview" ng-include="'components/states/statesTemplate.html'" ng-controller="StatesController"></div>
+    </body>
+</html>
